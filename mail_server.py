@@ -12,7 +12,7 @@ thisdir = pathlib.Path(__file__).parent.absolute() # path to directory of this f
 
 def load_mail() -> List[Dict[str, str]]:
     """
-    Loads the mail from the json file
+    Sumamry: Loads the mail from the json file
 
     Returns:
         list: A list of dictionaries representing the mail entries
@@ -24,9 +24,10 @@ def load_mail() -> List[Dict[str, str]]:
 
 def save_mail(mail: List[Dict[str, str]]) -> None:
     """TODO: fill out this docstring (using the load_mail docstring as a guide)
-    saves the mail to a file named mail_db.json by concatenating it with the information already found in mail_db.json
+    Summary: saves the mail to a file named mail_db.json by concatenating it with the information already found in mail_db.json
     
-    Args: list of dictionaries representing mail entries
+    Args: 
+        list: list of dictionaries representing mail entries
     
     Returns: does not return anything
     """
@@ -34,11 +35,13 @@ def save_mail(mail: List[Dict[str, str]]) -> None:
 
 def add_mail(mail_entry: Dict[str, str]) -> str:
     """TODO: fill out this docstring (using the load_mail docstring as a guide)
-    adds mail to an dictionary of mail entries
+    Summary: adds mail to an dictionary of mail entries
     
-    Args: list of dictionaries representing mail entries 
+    Args: 
+       dict: list of dictionaries representing mail entries 
     
-    Returns: string of the mail file just added to the mail dictionary    
+    Returns: 
+        str: string of the mail file just added to the mail dictionary    
     """
     mail = load_mail()
     mail.append(mail_entry)
@@ -50,9 +53,11 @@ def delete_mail(mail_id: str) -> bool:
     """TODO: fill out this docstring (using the load_mail docstring as a guide)
     deletes a mail entry at a specified id 
     
-    Args: string of id of the mail object to delete; mail id to delete
+    Args: 
+        str: string of id of the mail object to delete; mail id to delete
     
-    Returns: boolean (true if deleted, else false)
+    Returns: 
+        bool: boolean (true if deleted, else false)
     """
     mail = load_mail()
     for i, entry in enumerate(mail):
@@ -65,11 +70,14 @@ def delete_mail(mail_id: str) -> bool:
 
 def get_mail(mail_id: str) -> Optional[Dict[str, str]]:
     """TODO: fill out this docstring (using the load_mail docstring as a guide)
-    returns mail at specified index of the mail dictionary; gets mail at desired index
+    Summary: returns mail at specified index of the mail dictionary; gets mail at desired index
     
-    Args: string representing the id of the mail to get
+    Args: 
+        str: string representing the id of the mail to get
     
-    Returns: text of mail at desired id or none
+    Returns: 
+        dict: text of mail at desired id 
+        OR none
     """
     mail = load_mail()
     for entry in mail:
@@ -80,11 +88,13 @@ def get_mail(mail_id: str) -> Optional[Dict[str, str]]:
 
 def get_inbox(recipient: str) -> List[Dict[str, str]]:
     """TODO: fill out this docstring (using the load_mail docstring as a guide)
-    gets new mail and puts it into the inbox
+    Summary: gets new mail and puts it into the inbox
     
-    Args: a string representing the recipient/user (ie. a mail address)
+    Args: 
+        str: a string representing the recipient/user (ie. a mail address)
     
-    Returns: a list of new mail
+    Returns: 
+        list: a list of new mail
     """
     mail = load_mail()
     inbox = []
@@ -96,11 +106,13 @@ def get_inbox(recipient: str) -> List[Dict[str, str]]:
 
 def get_sent(sender: str) -> List[Dict[str, str]]:
     """TODO: fill out this docstring (using the load_mail docstring as a guide)
-    compares sender of mail with the inputed sender (arguement) to return a list of sent mail by that person 
+    Summary: compares sender of mail with the inputed sender (arguement) to return a list of sent mail by that person 
     
-    Args: a string representing the sender of the mail
+    Args: 
+        str: a string representing the sender of the mail
     
-    Returns: a list of sent mail from the sender (Arg)
+    Returns: 
+        List: a list of sent mail from the sender (Arg)
     """
     mail = load_mail()
     sent = []
@@ -131,7 +143,7 @@ def delete_mail_route(mail_id: str) -> bool:
     Summary: Deletes a mail entry from the json file
 
     Args:
-        mail_id (str): The id of the mail entry to delete
+        str: The id of the mail entry to delete
 
     Returns:
         bool: True if the mail was deleted, False otherwise
@@ -162,7 +174,7 @@ def get_inbox_route(recipient: str):
     Summary: Gets all mail entries for a recipient from the json file
 
     Args:
-        recipient (str): The recipient of the mail
+        str: The recipient of the mail
 
     Returns:
         list: A list of dictionaries representing the mail entries
