@@ -149,8 +149,9 @@ def delete_mail_route(mail_id: str) -> bool:
         bool: True if the mail was deleted, False otherwise
     """
     # TODO: implement this function
-    mail_entry = request.get_json()
-    return delete_mail(mail_entry)
+    res =jsonify({"DEL": delete_mail(mail_id)})
+    res.status_code = 200
+    return res
     
 
 @app.route('/mail/<mail_id>', methods=['GET'])
@@ -186,7 +187,7 @@ def get_inbox_route(recipient: str):
 # TODO: implement a rout e to get all mail entries for a sender
 # HINT: start with soemthing like this:
 #   @app.route('/mail/sent/<sender>', ...)
-@app.route('mail/sent/<sender>', methods=['GET']) 
+@app.route("/mail/sent/<sender>", methods=['GET']) 
 def get_sent_route(sender: str):
     """
     Summary: gets all sent mail from a sender from the json file
