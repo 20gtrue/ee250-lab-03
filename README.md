@@ -29,7 +29,7 @@ The common REST methods are: Get, Post, Put and Delete.
 
 In our mail server we implement an add, delete, get mail route, get inbox route, and get sent route. 
 
-We do not implement any Post methods which could be used to update existing emails. We could add this to our mail server by implementing a way to change the route of an email. Or, if we add functionality to the code to have different folders for mail (ie. read, unread etc. 
+We do not implement any Post methods which could be used to update existing emails. Or, if we add functionality to the code to have different folders for mail (ie. read, unread etc) we could implement a post function to change the route of an email. 
 
 Question 4:Why are API keys used for many RESTful APIs? What purpose do they
 serve? Make sure to cite any online resources you use to answer this question!
